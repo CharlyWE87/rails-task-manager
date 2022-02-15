@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   # I can list all tasks (read)
   get '/tasks', to: 'tasks#index'
   # I can view the details of a task (read)
+  get '/tasks/new', to: 'tasks#new'
   get '/tasks/:id', to: 'tasks#show'
   # I can add a new task (create)
-  get '/tasks/new', to: 'tasks#new'
+
   post '/tasks', to: 'tasks#create'
   # I can edit a task (mark as completed / update title & details)
-  get '/restaurants/id:/edit', to: 'tasks#edit'
+  get '/tasks/id:/edit', to: 'tasks#edit'
   patch '/tasks/:id', to: 'tasks#update'
   # I can remove a task (delete)
   delete '/tasks/:id', to: 'tasks#destroy'
